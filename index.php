@@ -1,7 +1,8 @@
 <?php
 $text = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas deleniti sed ea explicabo impedit! Vel in amet sunt repellat eius vero animi doloribus rerum explicabo aspernatur, optio nostrum recusandae quaerat.';
 
-$word = $_GET['word'];
+
+$word = $_GET ? $_GET['word'] : '';
 $replace = '***';
 var_dump(str_replace($word, $replace, $text));
 
@@ -19,7 +20,7 @@ var_dump(str_replace($word, $replace, $text));
 </head>
 
 <body>
-    <h1> <?php echo strlen($text) . ' ' . str_replace($word, $replace, $text); ?></h1>
+    <h1>Lunghezza paragrafo: <?php echo strlen($text) . ' Testo: ' . str_replace($word, $replace, $text); ?></h1>
 </body>
 
 </html>
